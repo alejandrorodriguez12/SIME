@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="#{request.contextPath}/assets/css/pedidos.css"/>
+        <title>Ohana/Inventario</title>
+    </h:head>
+    <h:body>
+        <div class="container-1">
+            <span class="icon"><i class="fa fa-search"></i></span>
+
+            <header>
+                <a href="interfaztrabajadores.xhtml">
+                    <img class="logo" src="#{request.contextPath}/assets/img/Logo.nuevo.jpeg" alt="logoOhana"/>
+                </a>
+                <nav class="li" style="font-size: 25px">
+                    <li class="lo"><a href="ventas.xhtml" class="al">Ventas</a></li>
+                    <li class="lo"><a href="pedidos.xhtml" class="al">Pedidos</a></li>
+                    <li class="lo"><a href="inventarios.xhtml" class="al">Inventario</a></li>
+                    <li class="lo"><a href="inventario_clientes.xhtml" class="al">Clientes</a></li>      
+                    <li class="lo"><a href="tra_datospersonales.xhtml" class="al">Mi cuenta</a></li>
+                    <li class="lo"><a href="../general/ohana.xhtml" class="al">Cerrar sesión</a></li>
+                </nav>
+            </header>
+            <fieldset>
+                <legend>Inventario</legend>
+                <p><div class="boton">
+                        <input type="submit" value="Modificar" class="btn btn-secondary"/>
+                        <input type="reset" value="Eliminar" class="btn btn-secondary"/>
+                        <a href="inventario_agregarproductos.xhtml">
+                            <input type="submit" value="Agregar" class="btn btn-secondary"/>
+                        </a>
+                    </div></p>
+
+
+                <main>
+
+
+                    <div class="mainAside">
+                        <ul>
+                            <li><a href="inventario_productos.xhtml" target="_self">Productos</a></li>
+                            <li><a href="inventario_productossalida.xhtml" target="_self">Salida de productos</a></li>
+                            <li><a href="Inventario_proveedores.xhtml" target="_self">Proveedores</a></li>
+                        </ul>
+                    </div>
+                    <fieldset>
+                        <legend>Productos</legend>
+
+                        <div class="table">
+                        <table border="1">
+                            <tr>
+                                <th>id Producto</th>
+
+                                <th>Id Tipo Producto</th>  
+
+                                <th>Talla</th>
+
+                                <th>Tamaño</th>
+
+                                <th>Color</th>
+
+                            </tr>
+                            <c:forEach var="prod" items="#{productoView.leerTodo()}">
+                                <tr>
+                                    <td>#{prod.idProducto}</td>
+
+                                    <td>#{prod.idTipoProducto.nombreProducto}</td>
+
+                                    <td>#{prod.talla}</td>
+
+                                    <td>#{prod.tamanio}</td>
+
+                                    <td>#{prod.color}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                            </div>
+                    </fieldset>
+                </main>
+            </fieldset>
+        </div>
+    </h:body>
+</html>
+
