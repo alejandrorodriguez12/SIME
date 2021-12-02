@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>  
+        
+        <fieldset>
+                <legend>Inventario</legend>
+                            <p><div class="boton">
+                    <input type="submit" value="Modificar" class="btn btn-secondary"/>
+                    <input type="reset" value="Eliminar" class="btn btn-secondary"/>
+                    <a href="#{request.contextPath}/administrador/inventario_proveedores-agregar.xhtml">
+                        <input type="reset" value="Agregar" class="btn btn-secondary"/>
+                    </a>
+                </div></p>
+
+        <main>
+                                <fieldset style="width: 80%; margin-left: 35%">
+                        <legend>Proveedores</legend>
+
+                        <div class="table" style=" overflow: scroll;height: 300px">
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Nit</th>
+
+                                        <th>Nombre emp</th>            
+
+                                        <th>Producto</th>
+
+                                        <th>Número cedula</th>
+
+                                        <th>Nombre Proveedor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+               
+                                        <tr>
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td></td>
+                                        </tr>
+                                 
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </fieldset>
+        </main>
+                </fieldset>
+    </ui:composition>
+</html>
+

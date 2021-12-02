@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>  
+        <main>  
+            <section class="form-registro" style="width: 60%; margin-left: 40%; margin-right: 10%; margin-bottom: 3%">
+                <h:form>
+                    <h4 align="center">Agregar producto</h4>
+                    <h:inputText class="controls" style="width: 40%; margin-right: 8%"  html5:name="idProducto" id="idProducto" html5:placeholder="IdProducto"/>
+                    <h:inputText class="controls" style="width: 40%"  html5:name="nombreProducto" id="nombreProducto" html5:placeholder="nombreProducto"/>
+                    <h:inputText class="controls" style="width: 40%; margin-right: 8%"  html5:name="talla" id="talla" html5:placeholder="talla"/>
+                    <h:inputText class="controls" style="width: 40%"  html5:name="tamaño" id="tamaño" html5:placeholder="tamaño"/>
+                    <h:inputText class="controls" style="width: 40%; margin-right:25%"  html5:name="color" id="color" html5:placeholder="color"/>
+               
+                    <h:commandButton class="botons" action="#{productoView.leerTodo()}" html5:type="submit" value="Agregar"/>
+                </h:form>
+            </section>
+
+        </main>
+    </ui:composition>
+</html>
+

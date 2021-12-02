@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>  
+        <fieldset>
+            <legend>Pedidos</legend>
+            <table>
+                <tr> 
+                    <th>Fecha</th>
+                    <th>Codigo</th> 
+                    <th>Producto</th> 
+                    <th>Cantidad</th> 
+                    <th>Domicilio</th>
+                    <th>Direccion</th>
+                    <th>Estado</th>
+
+                </tr>
+                <tr>
+                    <td>02-05-2021</td>
+                    <td>02324455</td>
+                    <td>Mug personalizado</td>
+                    <td>01</td>
+                    <td>Si</td>
+                    <td>Cra 5 a este#89c</td>
+                    <td><input type="text" name="texto" value="Entregado" readonly="true"/></td>
+                </tr>
+
+            </table>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </fieldset>
+
+        <p><div align="center">
+                <input type="submit" value="Agregar" class="btn btn-primary"/>
+                <input type="reset" value="Editar" class="btn btn-primary"/>
+            </div></p>
+
+
+    </ui:composition>
+</html>
+

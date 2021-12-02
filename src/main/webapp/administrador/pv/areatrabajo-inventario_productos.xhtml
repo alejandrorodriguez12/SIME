@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>  
+        
+        <fieldset>
+                <legend>Inventario</legend>
+                            <p><div class="boton">
+                    <input type="submit" value="Modificar" class="btn btn-secondary"/>
+                    <input type="reset" value="Eliminar" class="btn btn-secondary"/>
+                    <a href="#{request.contextPath}/administrador/inventario_agregarproductos.xhtml">
+                        <input type="reset" value="Agregar" class="btn btn-secondary"/>
+                    </a>
+                </div></p>
+
+        <main>
+            <fieldset style="width: 80%; margin-left: 35%">
+                <legend>Productos</legend>
+
+                <div class="table" style=" overflow: scroll;height: 300px">
+                    <table >
+                        <tr>
+                            <th width="20%">id Producto</th>
+
+                            <th width="20%">Nombre Producto</th>  
+
+                            <th width="20%">Talla</th>
+
+                            <th width="20%">Tamaño</th>
+
+                            <th width="20%">Color</th>
+
+                        </tr>
+                        <c:forEach var="prod" items="#{productoView.leerTodo()}">
+                            <tr>
+                                <td>#{prod.idProducto}</td>
+
+                                <td>#{prod.idTipoProducto.nombreProducto}</td>
+
+                                <td>#{prod.talla}</td>
+
+                                <td>#{prod.tamanio}</td>
+
+                                <td>#{prod.color}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+            </fieldset>
+        </main>
+                </fieldset>
+    </ui:composition>
+</html>
+
