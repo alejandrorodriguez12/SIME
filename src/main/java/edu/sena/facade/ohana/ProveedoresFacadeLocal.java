@@ -30,4 +30,7 @@ public interface ProveedoresFacadeLocal {
 
     int count();
     
+    public List<Proveedores> leerTodo();
+    
+    public boolean agregarProveedor(Proveedores provagr);
 }

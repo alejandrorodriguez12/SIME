@@ -36,19 +36,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-               
+                                    <c:forEach var="prov" items="#{proveedorView.leerTodo()}">
                                         <tr>
-                                            <td></td>
+                                            <td>#{prov.nit}</td>
 
-                                            <td></td>
+                                            <td>#{prov.nombreEmpresa}</td>
 
-                                            <td></td>
+                                            <td>#{prov.producto}</td>
 
-                                            <td></td>
+                                            <td>#{prov.personas.numeroCedula}</td>
 
-                                            <td></td>
+                                            <td>#{prov.nombreProveedor}</td>
                                         </tr>
-                                 
+                                    </c:forEach>
                                 </tbody>
                             </table>
 

@@ -7,16 +7,16 @@
     <ui:composition>  
         <main>  
                 <section class="form-registro" style="width: 60%; margin-left: 40%; margin-right: 10%; margin-bottom: 3%">
-                    <form action="inventario_proveedores.xhtml">
+                    <h:form>
                         <h4 align="center">Agregar Proveedor</h4>
-                        <input class="controls" type="text" name="nit" id="nit" placeholder="nit" required="" style="margin-right: 25px; width: 40%"/>
-                        <input class="controls" type="text" name="nombreEmpresa" id="nombreEmpresa" placeholder="nombreEmpresa" required="" style="margin-right: 25px; width: 40%"/>
-                        <input class="controls" type="text" name="producto" id="producto" placeholder="producto" required="" style="margin-right: 25px; width: 40%"/>
-                        <input class="controls" type="text" name="numeroCedula" id="numeroCedula" placeholder="numeroCedula" required="" style="margin-right: 25px; width: 40%"/>
-                        <input class="controls" type="text" name="nombreProveedor" id="nombreProveedor" placeholder="nombreProveedor" required="" style="margin-right: 25%; width: 40%"/>
-                        <input class="botons" type="submit" value="Agregar"/>
+                        <h:inputText value="#{proveedorView.provagr.nit}" class="controls" id="nit" html5:placeholder="nit" required="" style="margin-right: 25px; width: 40%"/>
+                        <h:inputText value="#{proveedorView.provagr.nombreEmpresa}" class="controls" id="nombreEmpresa" html5:placeholder="nombreEmpresa" required="" style="margin-right: 25px; width: 40%"/>
+                        <h:inputText value="#{proveedorView.provagr.producto}" class="controls" id="producto" html5:placeholder="producto" required="" style="margin-right: 25px; width: 40%"/>
+                        <h:inputText value="#{proveedorView.provagr.personas.numeroCedula}" class="controls" id="numeroCedula" html5:placeholder="numeroCedula" required="" style="margin-right: 25px; width: 40%"/>
+                        <h:inputText value="#{proveedorView.provagr.nombreProveedor}" class="controls" id="nombreProveedor" html5:placeholder="nombreProveedor" required="" style="margin-right: 25%; width: 40%"/>
+                        <h:commandButton class="botons" action="#{proveedorView.agregarProveedor()}" value="Agregar"/>
 
-                    </form>
+                    </h:form>
                 </section>
 
         </main>

@@ -3,19 +3,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition>  
         <main>  
             <section class="form-registro" style="width: 60%; margin-left: 40%; margin-right: 10%; margin-bottom: 3%">
                 <h:form>
+                    <h:messages style="color: red"></h:messages>
                     <h4 align="center">Agregar producto</h4>
-                    <h:inputText class="controls" style="width: 40%; margin-right: 8%"  html5:name="idProducto" id="idProducto" html5:placeholder="IdProducto"/>
-                    <h:inputText class="controls" style="width: 40%"  html5:name="nombreProducto" id="nombreProducto" html5:placeholder="nombreProducto"/>
-                    <h:inputText class="controls" style="width: 40%; margin-right: 8%"  html5:name="talla" id="talla" html5:placeholder="talla"/>
-                    <h:inputText class="controls" style="width: 40%"  html5:name="tamaño" id="tamaño" html5:placeholder="tamaño"/>
-                    <h:inputText class="controls" style="width: 40%; margin-right:25%"  html5:name="color" id="color" html5:placeholder="color"/>
+                    <h:inputText required="true" requiredMessage="Ingresar el id del producto" value="#{productoView.prodagr.idProducto}" class="controls" style="width: 40%; margin-right: 8%" id="idProducto" html5:placeholder="IdProducto"/>
+                    <h:inputText required="true" requiredMessage="Ingresar el id del tipo producto" value="#{productoView.prodagr.idTipoProducto.idTipoProducto}" class="controls" style="width: 40%"  id="idTipoProducto" html5:placeholder="IdTipoProducto"/>
+                    <h:inputText value="#{productoView.prodagr.talla}" class="controls" style="width: 40%; margin-right: 8%" id="talla" html5:placeholder="talla"/>
+                    <h:inputText value="#{productoView.prodagr.tamanio}" class="controls" style="width: 40%"  id="tamanio" html5:placeholder="tamaño"/>
+                    <h:selectOneMenu required="true" requiredMessage="Ingresar el color producto" value="#{productoView.prodagr.color}" class="controls" style="width: 40%; margin-right:25%" id="color" html5:placeholder="color">
+                        <f:selectItem itemLabel="Color"></f:selectItem>
+                        <f:selectItem itemLabel="Blanco" itemValue="Blanco"></f:selectItem>
+                        <f:selectItem itemLabel="Negro" itemValue="Negro"></f:selectItem>
+                        <f:selectItem itemLabel="Azul" itemValue="Azul"></f:selectItem>
+                        <f:selectItem itemLabel="Amarillo" itemValue="Amarillo"></f:selectItem>
+                        <f:selectItem itemLabel="Gris" itemValue="Gris"></f:selectItem>
+                        <f:selectItem itemLabel="Rojo" itemValue="Rojo"></f:selectItem>
+                        <f:selectItem itemLabel="Rosado" itemValue="Rosado"></f:selectItem>
+                        <f:selectItem itemLabel="Verde" itemValue="Verde"></f:selectItem>
+                     </h:selectOneMenu> 
                
-                    <h:commandButton class="botons" action="#{productoView.leerTodo()}" html5:type="submit" value="Agregar"/>
+                    <h:commandButton class="botons" action="#{productoView.agregarProducto()}" html5:type="submit" value="Agregar"/>
                 </h:form>
             </section>
 

@@ -13,23 +13,37 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 
-/**
- *
- * @author 57301
- */
 @Named(value = "productoView")
 @ViewScoped
-public class ProductoView implements Serializable{
-@EJB
-ProductosFacadeLocal productosFacadeLocal;
-    /**
-     * Creates a new instance of ProductoView
-     */
+public class ProductoView implements Serializable {
+
+    @EJB
+    ProductosFacadeLocal productosFacadeLocal;
+
+    private Productos prodagr = new Productos();
+
     public ProductoView() {
     }
-    
-    public List<Productos> leerTodo(){
+
+    public List<Productos> leerTodo() {
         return productosFacadeLocal.leerTodo();
     }
-    
+
+    public void agregarProducto() {
+        if (productosFacadeLocal.agregarProducto(prodagr)) {
+            System.out.println("Producto agregado");
+        } else {
+            System.out.println("Error agregando el producto");
+        }
+
+    }
+
+    public Productos getProdagr() {
+        return prodagr;
+    }
+
+    public void setProdagr(Productos prodagr) {
+        this.prodagr = prodagr;
+    }
+
 }

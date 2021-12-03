@@ -6,9 +6,11 @@
 package edu.sena.facade.ohana;
 
 import edu.sena.entity.ohana.Proveedores;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,5 +30,28 @@ public class ProveedoresFacade extends AbstractFacade<Proveedores> implements Pr
     public ProveedoresFacade() {
         super(Proveedores.class);
     }
-    
+
+    @Override
+    public List<Proveedores> leerTodo() {
+        em.getEntityManagerFactory().getCache().evictAll();
+        Query prov = em.createQuery("SELECT p FROM Proveedores p");
+        return prov.getResultList();
+    }
+
+    @Override
+    public boolean agregarProveedor(Proveedores provagr) {
+        try {
+            Query prov = em.createNativeQuery("INSERT INTO proveedores (nit, nombreEmpresa, producto, numeroCedula, nombreProveedor) VALUES (?,?,?,?,?);");
+            prov.setParameter(1, provagr.getNit());
+            prov.setParameter(2, provagr.getNombreEmpresa());
+            prov.setParameter(3, provagr.getProducto());
+            prov.setParameter(4, provagr.getPersonas().getNumeroCedula());
+            prov.setParameter(5, provagr.getNombreProveedor());
+            prov.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }
