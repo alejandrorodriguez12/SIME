@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:composition>
+    <table>
+       <section class="form-registro">
+            <form action="#" class="row g-3 needs-validation" novalidate>
+            <h4>Datos personales</h4>
+            <input class="controls" type="text" name="Nombre" id="nombre" placeholder="Escriba su nombre" required=""></input>
+            <div class="invalid-feedback">Digite un nombre valido</div>
+            <input class="controls" type="text" name="apellido" id="apellido" placeholder="Escriba su apellidos" required=""></input>
+            <div class="invalid-feedback">Digite un apellido valido</div>
+            <input class="controls" type="number" name="edad" id="edad" placeholder="Escriba su edad" required=""></input>
+            <div class="invalid-feedback">Digite una edad valida</div>
+            <input class="controls" type="number" name="telefono" id="telefono" placeholder="Escriba su numero de telefono" required=""></input>
+            <div class="invalid-feedback">Digite un numero de telefono valido</div>
+            <input type="radio" name="boton" value="Hombre">Hombre
+            <input type="radio" name="boton" value="Mujer">Mujer
+                <input class="controls" type="password" name="Contraseña" id="Contraseña" placeholder="Contraseña" required=""></input>
+            <div class="invalid-feedback">Digite una contraseña valida</div>
+            <input class="botons" type="submit" value="Guardar"></input>
+            </form>
+        </form>
+    </section>
+        </ui:composition>
+</html>
+

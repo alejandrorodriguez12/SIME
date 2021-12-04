@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>
+        <fieldset>
+            <legend>Carrito de compras</legend>
+            <table class="de"  style="width: 100%">
+                <tbody>
+                    <tr> 
+                        <th>PRODUCTO</th>
+                        <th>DESCRIPCION</th> 
+                        <th>DISPONIBILIDAD</th> 
+                        <th>VALOR UNITARIO</th> 
+                        <th>CANTIDAD</th>
+                        <th>VALOR TOTAL</th> 
+                    </tr> 
+                    <tr> 
+                        <td><div><img src="mug-blanco-personalizado.jpg" height="100" width="90"></td>
+                                    <td>Mug personalizado</td> 
+                                    <td><div class="switch-button">
+                                            <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox"></input>
+                                                <label for="switch-label" class="switch-button__label"></label>
+                                        </div></td> 
+                                    <td>15.000 COP</td> 
+                                        <td>
+                                            <script type="text/javascript">
+                                            var valor = 0;
+                                            function carrito(boton) {
+                                                var contador = document.getElementById("contador").value;
+                                                if (boton.value == 'aumentar') {
+                                                    valor++
+                                                } else {
+                                                    valor--
+                                                }
+                                                document.getElementById("contador").textContent = valor;
+                                            }
+
+                                            </script>
+                                            <button id='aumentar' onclick="carrito(this)" value="aumentar">+</button>
+                                            <button id='disminuir' onclick="carrito(this)" value="disminuir">-</button>
+
+                                            <p id='contador' value=""></p></td> 
+                                        <td>15.000 COP</td>
+                                        </tr> 
+                                        <tr>
+                                            <td><img src="gorra-personalizada-friki.png"  height="100" width="90"></td>
+                                            <td>Gorra personalizado</td> 
+                                            <td><div class="switch-button">
+                                                    <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox"></input>
+                                                        <label for="switch-label" class="switch-button__label"></label>
+                                                </div></td> 
+                                            <td>25.0000 COP</th> 
+                                                <td><script type="text/javascript">
+                                                    var valor = 0;
+                                                    function carrito1(boton) {
+                                                        var contador = document.getElementById("contador").value;
+                                                        if (boton.value == 'aumentar') {
+                                                            valor++
+                                                        } else {
+                                                            valor--
+                                                        }
+                                                        document.getElementById("contador").textContent = valor;
+                                                    }
+
+                                                    </script>
+                                                    <button id='aumentar' onclick="carrito1(this)" value="aumentar">+</button>
+                                                    <button id='disminuir' onclick="carrito1(this)" value="disminuir">-</button>
+
+                                                    <p id='contador' value=""></p></td> 
+                                                <td>25.000 COP</td>
+                                        </tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th align="right">40.000 COP</th>
+                                        </tbody>
+                                        </table></fieldset>
+                                        <div class="salir">
+                                            <input type="button" value="Salir"></div>
+                                        <div class="comprar">
+                                            <input type="button" value="Comprar"></div>
+                                        </ui:composition>
+                                        </h:body>
+                                        </html>
+
