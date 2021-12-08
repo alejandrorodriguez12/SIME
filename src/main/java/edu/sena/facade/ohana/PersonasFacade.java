@@ -9,6 +9,7 @@ import edu.sena.entity.ohana.Personas;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,5 +29,30 @@ public class PersonasFacade extends AbstractFacade<Personas> implements Personas
     public PersonasFacade() {
         super(Personas.class);
     }
+
+    @Override
+    public Personas inicioSesion(String correoIn, String contraseniaIn) {
+        try {
+            Query p = em.createQuery("SELECT p FROM personas p WHERE p.correo = :correoIn AND p.contrasenia = :contraseniaIn;");
+            p.setParameter("correoIn", correoIn);
+            p.setParameter("contraseniaIn", contraseniaIn);
+            return (Personas) p.getSingleResult();
+        } catch (Exception e) {
+            return null;
+        }
+        
+    }
+ 
+    @Override
+    public Personas recuperarContraseña(String correoIn) {
+        try {
+            Query p = em.createQuery("select p from personas p, roles_personas p where personas.correo = :correoIn;");
+            p.setParameter("correoIn", correoIn);
+            return (Personas) p.getSingleResult();
+        } catch (Exception e) {
+            return null;
+        }
+        
+    } 
     
 }

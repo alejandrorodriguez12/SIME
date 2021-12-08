@@ -30,4 +30,8 @@ public interface ClientesFacadeLocal {
 
     int count();
     
+    public List<Clientes> leerTodo();
+    
+    public boolean crearCliente(Clientes crecli);
+    
 }

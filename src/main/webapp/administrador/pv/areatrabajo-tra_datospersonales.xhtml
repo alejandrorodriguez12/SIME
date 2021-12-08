@@ -5,20 +5,20 @@
       xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <ui:composition>  
-            <section class="form-registro" style="width: 70%">
-                <form action="" class="row g-3 needs-validation" novalidate="" style="width: 90%">
-                    <h4>Datos personales</h4>
-                    <input class="controls" type="text" name="Nombres" id="Nombres" placeholder="Primer nombre" required="" style="width: 45%;"/>
-                    <input class="controls" type="text" name="Nombres" id="Nombres" placeholder="Segundo nombre" style="width: 45%;margin-left: 2%"/>
-                    <input class="controls" type="text" name="Apellidos" id="Apellidos" placeholder="Primer apellidos" required="" style="width: 45%;"/>
-                    <input class="controls" type="text" name="Apellidos" id="Apellidos" placeholder="Segundo apellidos" required="" style="width: 45%;margin-left: 2%"/>
-                    <input class="controls" type="email" name="Correo electronico" id="Correo electrónico" placeholder="Correo electronico" required="" style="width: 45%;"/>
-                    <input class="controls" type="date" name="Fecha de nacimiento" id="Fecha de nacimiento" placeholder="Fecha de nacimiento" required="" style="width: 45%;margin-left: 2%"/>
-                    <input class="controls" type="text" name="Celular" id="Celular" placeholder="Número de celular" style="width: 45%;"/>
-                    <p><a href="recuperar contraseña.html">Cambiar contraseña</a></p>                 
-                    <input class="botons" type="submit" value="Actualizar"/>
-                </form>
-            </section>
+        <section class="form-registro" style="width: 70%">
+            <h:form  style="width: 90%">
+                <h4>Datos personales</h4>
+                <h:inputText class="controls" id="PNombre" html5:placeholder="Primer nombre" style="width: 45%;"/>
+                <h:inputText class="controls" id="SNombre" html5:placeholder="Segundo nombre" style="width: 45%;margin-left: 2%"/>
+                <h:inputText class="controls" id="PApellido" html5:placeholder="Primer apellidos"  style="width: 45%;"/>
+                <h:inputText class="controls" id="SApellido" html5:placeholder="Segundo apellidos"  style="width: 45%;margin-left: 2%"/>
+                <h:inputText class="controls" html5:type="email" id="CorreoElectrónico" html5:placeholder="Correo electrónico" style="width: 45%;"/>
+                <h:inputText class="controls" html5:type="date" id="FechaDeNacimiento" html5:placeholder="Fecha de nacimiento"  style="width: 45%;margin-left: 2%"/>
+                <h:inputText class="controls" id="Celular" html5:placeholder="Número de celular" style="width: 45%; "/>
+                <h:inputText class="controls" id="Contraseña" html5:placeholder="Contraseña" style="width: 45%; margin-left: 2%"/>                
+                <h:commandButton class="botons" type="submit" value="Actualizar"/>
+            </h:form>
+        </section>
     </ui:composition>
 </html>
 

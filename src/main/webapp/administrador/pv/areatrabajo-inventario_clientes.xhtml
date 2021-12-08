@@ -3,43 +3,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:composition>  
-        
-  <main style="margin-top: 3%; overflow: scroll; height:300px">
-                <table>
-                    <tr> 
-                        <th>IdCliente</th>
-                        <th>Primer nombre</th> 
-                        <th>Segundo nombre</th> 
-                        <th>Primer apellido</th> 
-                        <th>Segundo apellido</th>
-                        <th>Correo</th>
-                        <th>Numero celular</th>
-                        <th>Dirección</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>Compras realizadas</th>
-                    </tr>
+       <h:form>
+        <main style="margin-top: 3%; overflow: scroll; height:300px">
+             
+            <table>
+               
+                <tr> 
+                    <th>IdCliente</th>
+                    <th>Primer nombre</th> 
+                    <th>Segundo nombre</th> 
+                    <th>Primer apellido</th> 
+                    <th>Segundo apellido</th>
+                    <th>Correo</th>
+                    <th>Numero celular</th>
+                    <th>Dirección</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Estado</th>
+                    <th>nada</th>
+                </tr>
+                <c:forEach var="cli" items="#{clienteSession.leerTodo()}">
                     <tr>
-                        <td>1</td>
-                        <td>Monica</td>
-                        <td>Camila</td>
-                        <td>Martinez</td>
-                        <td>Garcia</td>
-                        <td>martinezmonica12@gmail.com</td>
-                        <td>3206611213</td>
-                        <td>Calle 12 #45-23</td>
-                        <td>03/09/1996</td>
-                        <td>2</td>
+                        <td>#{cli.idClientes}</td>
+                        <td>#{cli.personas.primerNombre}</td>
+                        <td>#{cli.personas.segundoNombre}</td>
+                        <td>#{cli.personas.primerApellido}</td>
+                        <td>#{cli.personas.segundoApellido}</td>
+                        <td>#{cli.personas.correo}</td>
+                        <td>#{cli.personas.numeroCelular}</td>
+                        <td>#{cli.personas.tipoDeVia} #{cli.personas.numeroVia}#{cli.personas.letraVia} #{cli.personas.numero} #{cli.personas.letra} #{cli.personas.numeroApto}</td>
+                        <td>#{cli.personas.fechaDeNacimiento}</td>
+                        <td>#{cli.estado}</td>
+                        <td><h:commandButton class="btn btn-danger" value="Estado"></h:commandButton></td>
                     </tr>
-
-                </table>
-                </main>  
-                <br/>
-                <p><div align="center">
-                        <input type="reset" value="Editar" class="btn btn-primary"/>
-                    </div></p>
-                  
+                </c:forEach>
+            </table>
+            
+        </main> 
+            
+        <br/>
+        <p><div align="center">
+                <h:commandButton  value="Editar" class="btn btn-primary"/>
+            </div></p>
+</h:form>
     </ui:composition>
 </html>
 

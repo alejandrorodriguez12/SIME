@@ -3,34 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:composition>  
         <fieldset>
             <legend>Pedidos</legend>
+            <div style=" overflow: scroll;height: 300px">
             <table>
                 <tr> 
                     <th>Fecha</th>
                     <th>Codigo</th> 
                     <th>Producto</th> 
                     <th>Cantidad</th> 
-                    <th>Domicilio</th>
+                    <th>Medio de pago</th>
                     <th>Direccion</th>
                     <th>Estado</th>
 
                 </tr>
-                <tr>
-                    <td>02-05-2021</td>
-                    <td>02324455</td>
-                    <td>Mug personalizado</td>
-                    <td>01</td>
-                    <td>Si</td>
-                    <td>Cra 5 a este#89c</td>
-                    <td><input type="text" name="texto" value="Entregado" readonly="true"/></td>
-                </tr>
-
-            </table>
-            <br/>
-            <br/>
+                <c:forEach var="ped" items="#{ventasSession.leerTodo()}">
+                    <tr>
+                        <td>#{ped.fechaVenta}</td>
+                        <td>#{ped.numeroDeCompra}</td>
+                        <td>#{ped.idProducto.idTipoProducto.nombreProducto}</td>
+                        <td>#{ped.cantidadProducto}</td>
+                        <td>#{ped.idMediosDePago.medioDePago}</td>
+                        <td>#{ped.idCliente.personas.tipoDeVia} #{ped.idCliente.personas.numeroVia}#{ped.idCliente.personas.letraVia} #{ped.idCliente.personas.numero} #{ped.idCliente.personas.letra} #{ped.idCliente.personas.numeroApto}</td>
+                        <td>#{ped.idEstadoDeEnvios.estadoDeEnvio}</td>
+                    </tr>
+                </c:forEach>
+            </table> 
+                </div>
             <br/>
             <br/>
         </fieldset>

@@ -61,6 +61,9 @@ public class Inventario implements Serializable {
     @JoinColumn(name = "nit", referencedColumnName = "nit")
     @ManyToOne(fetch = FetchType.LAZY)
     private Proveedores nit;
+    @JoinColumn(name = "idVentas", referencedColumnName = "idVentas")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Ventas idVentas;
 
     public Inventario() {
     }
@@ -155,6 +158,14 @@ public class Inventario implements Serializable {
 
     public void setNit(Proveedores nit) {
         this.nit = nit;
+    }
+
+    public Ventas getIdVentas() {
+        return idVentas;
+    }
+
+    public void setIdVentas(Ventas idVentas) {
+        this.idVentas = idVentas;
     }
 
     @Override

@@ -10,8 +10,10 @@ import edu.sena.facade.ohana.ProductosFacadeLocal;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
+import org.primefaces.PrimeFaces;
 
 @Named(value = "productoView")
 @ViewScoped
@@ -36,6 +38,24 @@ public class ProductoView implements Serializable {
             System.out.println("Error agregando el producto");
         }
 
+    }
+
+    public void actualizarProducto() {
+        try {
+            productosFacadeLocal.edit(prodagr);
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + " 'Producto',"
+                    + " 'Actualizado con exito', "
+                    + " 'success'"
+                    + ")");
+
+        } catch (Exception e) {
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + " 'Producto',"
+                    + " 'No se pudo actualizar', "
+                    + " 'error'"
+                    + ")");
+        }
     }
 
     public Productos getProdagr() {

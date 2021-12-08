@@ -30,4 +30,9 @@ public interface PersonasFacadeLocal {
 
     int count();
     
+    public Personas inicioSesion(String correoIn, String contraseniaIn);
+    
+    public Personas recuperarContraseña(String correoIn);
+    
+    
 }

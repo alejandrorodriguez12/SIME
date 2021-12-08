@@ -30,4 +30,6 @@ public interface VentasFacadeLocal {
 
     int count();
     
+    public List<Ventas> leerTodo();
+    
 }

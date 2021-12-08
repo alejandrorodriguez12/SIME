@@ -38,6 +38,8 @@ public class Clientes implements Serializable {
     @Basic(optional = false)
     @Column(name = "idClientes")
     private Integer idClientes;
+    @Column(name = "estado")
+    private Short estado;
     @OneToMany(mappedBy = "idCliente", fetch = FetchType.LAZY)
     private Collection<Cotizaciones> cotizacionesCollection;
     @OneToMany(mappedBy = "idCliente", fetch = FetchType.LAZY)
@@ -61,6 +63,14 @@ public class Clientes implements Serializable {
 
     public void setIdClientes(Integer idClientes) {
         this.idClientes = idClientes;
+    }
+
+    public Short getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Short estado) {
+        this.estado = estado;
     }
 
     public Collection<Cotizaciones> getCotizacionesCollection() {
@@ -111,5 +121,5 @@ public class Clientes implements Serializable {
     public String toString() {
         return "edu.sena.entity.ohana.Clientes[ idClientes=" + idClientes + " ]";
     }
-    
+
 }

@@ -34,6 +34,7 @@
                             <th width="20%">Color</th>
 
                         </tr>
+                        <h:form>
                         <c:forEach var="prod" items="#{productoView.leerTodo()}">
                             <tr>
                                 <td>#{prod.idProducto}</td>
@@ -45,8 +46,11 @@
                                 <td>#{prod.tamanio}</td>
 
                                 <td>#{prod.color}</td>
+                                
+                                <td><h:commandButton class="btn btn-danger" value="Estado"></h:commandButton></td>
                             </tr>
                         </c:forEach>
+                        </h:form>    
                     </table>
                 </div>
             </fieldset>

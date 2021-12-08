@@ -6,9 +6,11 @@
 package edu.sena.facade.ohana;
 
 import edu.sena.entity.ohana.Ventas;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,13 @@ public class VentasFacade extends AbstractFacade<Ventas> implements VentasFacade
 
     public VentasFacade() {
         super(Ventas.class);
+    }
+    
+    @Override
+    public List<Ventas> leerTodo(){
+        em.getEntityManagerFactory().getCache().evictAll();
+        Query ven = em.createQuery("SELECT v FROM Ventas v");
+        return ven.getResultList();
     }
     
 }

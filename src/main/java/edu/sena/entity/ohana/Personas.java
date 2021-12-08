@@ -37,6 +37,12 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Personas.findAll", query = "SELECT p FROM Personas p")})
 public class Personas implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 20)
+    @Column(name = "contrasenia")
+    private String contrasenia;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -288,6 +294,14 @@ public class Personas implements Serializable {
     @Override
     public String toString() {
         return "edu.sena.entity.ohana.Personas[ numeroCedula=" + numeroCedula + " ]";
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContraseña(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
     
 }
