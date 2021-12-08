@@ -29,6 +29,8 @@ public class ClienteSession implements Serializable {
 
     private Clientes crecli = new Clientes();
     private Clientes logcli = new Clientes();
+    private String correoIn = "";
+    private String contraseniaIn = "";
 
     /**
      * Creates a new instance of ClienteSession
@@ -49,8 +51,45 @@ public class ClienteSession implements Serializable {
 
     }
     
+    public void actualizarDatos(){
+        try {
+            clientesFacadeLocal.edit(logcli);
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + "'Usuario',"
+                    + "'Actualizado con exito !!!'"
+                    + "'Success'"
+                    + ")");
+        } catch (Exception e) {
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + "'Usuario',"
+                    + "'No se pudo actualizar, intente de nuevo'"
+                    + "'Error'"
+                    + ")");
+        }
+    }
 
-    
+    public void cambiarEstado(Clientes cliE){
+        try {
+            if(cliE.getEstado().toString().equals("1")){
+                cliE.setEstado(Short.parseShort("0"));
+            }else{
+                cliE.setEstado(Short.parseShort("1"));
+            }
+            clientesFacadeLocal.edit(cliE);
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + "'Usuario',"
+                    + "'Actualizado con exito !!!'"
+                    + "'Error'"
+                    + ")");
+        } catch (Exception e) {
+            PrimeFaces.current().executeScript("Swal.fire("
+                    + "'Usuario',"
+                    + "'No se pudo actualizar, intente de nuevo'"
+                    + "'Error'"
+                    + ")");
+        }
+    }    
+  
     
 
     public Clientes getCrecli() {
@@ -67,6 +106,22 @@ public class ClienteSession implements Serializable {
 
     public void setLogcli(Clientes logcli) {
         this.logcli = logcli;
+    }
+
+    public String getCorreoIn() {
+        return correoIn;
+    }
+
+    public void setCorreoIn(String correoIn) {
+        this.correoIn = correoIn;
+    }
+
+    public String getContraseniaIn() {
+        return contraseniaIn;
+    }
+
+    public void setContraseniaIn(String contraseniaIn) {
+        this.contraseniaIn = contraseniaIn;
     }
 
 }
